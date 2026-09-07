@@ -1,7 +1,7 @@
 {
   "name": "chrome-extension",
-  "version": "0.5.0",
-  "description": "chrome extension - core settings",
+  "version": "0.1.0",
+  "description": "Deploy on Sealos - extension core (manifest, background)",
   "type": "module",
   "private": true,
   "sideEffects": false,

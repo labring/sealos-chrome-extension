@@ -1,12 +1,12 @@
-import { canSwitchTheme } from '../helpers/theme.js';
-
 describe('Webextension Popup', () => {
-  it('should open the popup successfully', async () => {
+  it('should open the popup with the Sealos entry', async () => {
     const extensionPath = await browser.getExtensionPath();
     const popupUrl = `${extensionPath}/popup/index.html`;
     await browser.url(popupUrl);
 
-    await expect(browser).toHaveTitle('Popup');
-    await canSwitchTheme();
+    await expect(browser).toHaveTitle('Deploy on Sealos');
+
+    const openSealosButton = await $('button=Open Sealos').getElement();
+    await expect(openSealosButton).toBeDisplayed();
   });
 });

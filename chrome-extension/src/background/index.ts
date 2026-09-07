@@ -1,9 +1,8 @@
 import 'webextension-polyfill';
-import { exampleThemeStorage } from '@extension/storage';
 
-exampleThemeStorage.get().then(theme => {
-  console.log('theme', theme);
+// First install: surface the settings page so the user can choose auto-deploy vs review mode.
+chrome.runtime.onInstalled.addListener(details => {
+  if (details.reason === 'install') {
+    chrome.runtime.openOptionsPage();
+  }
 });
-
-console.log('Background loaded');
-console.log("Edit 'chrome-extension/src/background/index.ts' and save to reload.");

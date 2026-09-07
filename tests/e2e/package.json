@@ -1,7 +1,7 @@
 {
   "name": "@extension/e2e",
-  "version": "0.5.0",
-  "description": "E2e tests configuration boilerplate",
+  "version": "0.1.0",
+  "description": "E2e tests for the Deploy on Sealos extension",
   "private": true,
   "sideEffects": false,
   "type": "module",

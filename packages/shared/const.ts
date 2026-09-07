@@ -1,3 +1,3 @@
-export const PROJECT_URL_OBJECT = {
-  url: 'https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite',
+export const SEALOS_CONSOLE_URL_OBJECT = {
+  url: 'https://usw-1.sealos.io/',
 } as const;

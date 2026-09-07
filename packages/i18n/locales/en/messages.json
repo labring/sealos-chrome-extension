@@ -1,31 +1,39 @@
 {
   "extensionDescription": {
     "description": "Extension description",
-    "message": "Chrome extension boilerplate developed with Vite, React and Typescript"
+    "message": "Deploy any GitHub repository to Sealos with one click"
   },
   "extensionName": {
     "description": "Extension name",
-    "message": "Chrome extension boilerplate"
+    "message": "Deploy on Sealos"
   },
-  "toggleTheme": {
-    "message": "Toggle theme"
+  "deployOnSealos": {
+    "description": "Button label injected on GitHub repository pages",
+    "message": "Deploy on Sealos"
   },
-  "injectButton": {
-    "message": "Click to inject Content Scripts"
+  "popupTitle": {
+    "description": "Heading on the extension popup",
+    "message": "Deploy on Sealos"
   },
-  "greeting": {
-    "description": "Greeting message",
-    "message": "Hello, My name is $NAME$",
-    "placeholders": {
-      "name": {
-        "content": "$1",
-        "example": "John Doe"
-      }
-    }
+  "popupDescription": {
+    "description": "Explains what the extension does",
+    "message": "Open any GitHub repository page and a \"Deploy on Sealos\" button appears in the header. Click it to deploy the repository on Sealos Brain."
   },
-  "hello": {
-    "description": "Placeholder example",
-    "message": "Hello $1"
+  "openSealos": {
+    "description": "Button label to open the Sealos console",
+    "message": "Open Sealos"
+  },
+  "autoDeploySetting": {
+    "description": "Options page toggle for GitHub deep link autoDeploy parameter",
+    "message": "Deploy automatically (skip the review step in Sealos Brain)"
+  },
+  "autoDeploySettingDescription": {
+    "description": "Explains the GitHub login-recovery gap",
+    "message": "When off, Sealos opens the import review first. Note: if you are not signed in to Sealos, the automatic mode may lose parameters after login."
+  },
+  "settingsHeading": {
+    "description": "Heading on the options page",
+    "message": "Settings"
   },
   "displayErrorInfo": {
     "message": "Error occur"

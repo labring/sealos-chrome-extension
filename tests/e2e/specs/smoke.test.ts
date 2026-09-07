@@ -1,7 +1,7 @@
-describe('The example page can be loaded', () => {
-  it('should be able to go to example page', async () => {
-    await browser.url('https://www.example.com');
+describe('The GitHub homepage can be loaded', () => {
+  it('should be able to go to github.com', async () => {
+    await browser.url('https://github.com');
 
-    await expect(browser).toHaveTitle('Example Domain');
+    await expect(browser).toHaveTitleContaining('GitHub');
   });
 });

@@ -1,1 +1,1 @@
-export * from './example-theme-storage.js';
+export * from './deploy-settings-storage.js';

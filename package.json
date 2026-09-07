@@ -1,13 +1,13 @@
 {
-  "name": "chrome-extension-boilerplate-react-vite",
-  "version": "0.5.0",
-  "description": "chrome extension boilerplate",
+  "name": "sealos-chrome-extension",
+  "version": "0.1.0",
+  "description": "Deploy on Sealos — one-click deploy any GitHub repository to Sealos",
   "license": "MIT",
   "private": true,
   "sideEffects": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite.git"
+    "url": "https://github.com/zjy365/sealos-chrome-extension.git"
   },
   "type": "module",
   "scripts": {
@@ -34,7 +34,6 @@
     "update-version": "bash bash-scripts/update_version.sh",
     "copy-env": "bash bash-scripts/copy_env.sh",
     "set-global-env": "bash bash-scripts/set_global_env.sh",
-    "module-manager": "pnpm -F module-manager start",
     "postinstall": "pnpm copy-env"
   },
   "dependencies": {
