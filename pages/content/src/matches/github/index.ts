@@ -17,6 +17,26 @@ import { buildSealosDeployUrl, DEFAULT_AUTO_DEPLOY, parseGithubRepoRoot } from '
 const BUTTON_ID = 'sealos-deploy-button';
 const ITEM_ID = 'sealos-deploy-item';
 
+// Sealos logo blue (sampled from the extension icon), with a darker hover shade.
+// Inlined because this content script ships no CSS file; `!important` beats GitHub's
+// .btn theme variables in both light and dark mode.
+const ensureButtonStyle = () => {
+  if (document.getElementById('sealos-deploy-button-style')) return;
+  const style = document.createElement('style');
+  style.id = 'sealos-deploy-button-style';
+  style.textContent = `
+    #${BUTTON_ID} {
+      background-color: #55acf8 !important;
+      border-color: transparent !important;
+      color: #ffffff !important;
+    }
+    #${BUTTON_ID}:hover {
+      background-color: #3e9df5 !important;
+    }
+  `;
+  document.head.appendChild(style);
+};
+
 const ACTIONS_ROW_SELECTORS = ['ul[data-testid="repo-header-actions"]', 'ul.pagehead-actions'];
 
 const findActionsRow = (): HTMLElement | null => {
@@ -60,6 +80,7 @@ deploySettingsStorage.subscribe(() => {
 });
 
 const createItem = (repoRootUrl: string): HTMLLIElement => {
+  ensureButtonStyle();
   const item = document.createElement('li');
   item.id = ITEM_ID;
 
