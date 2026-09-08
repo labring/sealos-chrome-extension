@@ -23,18 +23,6 @@
     "description": "Button label to open the Sealos console",
     "message": "Open Sealos"
   },
-  "autoDeploySetting": {
-    "description": "Options page toggle for GitHub deep link autoDeploy parameter",
-    "message": "Deploy automatically (skip the review step in Sealos Brain)"
-  },
-  "autoDeploySettingDescription": {
-    "description": "Explains the GitHub login-recovery gap",
-    "message": "When off, Sealos opens the import review first. Note: if you are not signed in to Sealos, the automatic mode may lose parameters after login."
-  },
-  "settingsHeading": {
-    "description": "Heading on the options page",
-    "message": "Settings"
-  },
   "displayErrorInfo": {
     "message": "Error occur"
   },

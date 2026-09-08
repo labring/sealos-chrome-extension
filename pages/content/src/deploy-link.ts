@@ -10,12 +10,6 @@
 export const SEALOS_REGION_HOST = 'usw-1.sealos.io';
 
 /**
- * Assumption (configurable): the button triggers Brain's auto-deploy flow by default.
- * Set to false to open the GitHub Import review pane instead (manual "Deploy" confirmation, no autoDeploy param).
- */
-export const DEFAULT_AUTO_DEPLOY = true;
-
-/**
  * Returns the canonical repository root URL ("https://github.com/<owner>/<repo>") when the
  * given URL is a GitHub repository root page, or null when it is not a deployable repo root.
  */
@@ -42,12 +36,10 @@ export const parseGithubRepoRoot = (rawUrl: string): string | null => {
   return `https://github.com/${owner}/${repo}`;
 };
 
-export const buildSealosDeployUrl = (repoRootUrl: string, autoDeploy = DEFAULT_AUTO_DEPLOY): string => {
+export const buildSealosDeployUrl = (repoRootUrl: string): string => {
   const url = new URL(`https://${SEALOS_REGION_HOST}/oauth`);
   url.searchParams.set('openapp', 'system-brain');
   url.searchParams.set('githubRepo', repoRootUrl);
-  if (autoDeploy) {
-    url.searchParams.set('autoDeploy', '1');
-  }
+  url.searchParams.set('autoDeploy', '1');
   return url.toString();
 };

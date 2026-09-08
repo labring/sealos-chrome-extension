@@ -26,11 +26,11 @@ Sealos Desktop handles login / region / workspace, then Sealos runs the GitHub i
 
 The button is **not** injected on non-repository pages (`/tree/...`, `/pull/...`, `/settings`, user/org pages), and it follows client-side (turbo) tab navigation inside a repository.
 
-### Settings
+### Deployment flow
 
-- **Deploy automatically** (extension options page): when on, the deep link carries `autoDeploy=1` and Sealos triggers the deployment as soon as the GitHub connection is ready. When off, Sealos opens the import review pane and you confirm manually.
-  > Note: if you are not signed in to Sealos, automatic mode may lose the parameters after the login redirect (a known Desktop-side gap). Manual mode is safer for first-time users.
-- **Theme**: light/dark toggle in the popup and options page.
+The repository button always requests automatic deployment. If signed out, users first see the Sealos login page. Brain then requests GitHub authorization when needed and continues creating the repository deployment task. There is no settings page or automatic-deployment toggle; installation does not open an extra page.
+
+The toolbar popup's **Open Sealos** button opens the console without starting a repository deployment.
 
 ## Development
 
@@ -55,7 +55,6 @@ pages/
     src/deploy-link.ts   # Sealos deep-link protocol (URL validation + build)
     src/matches/github/  # button injection + SPA navigation handling
   popup/                 # extension action popup
-  options/               # settings page (auto-deploy toggle)
 landing/                 # download landing page (static, Linear design style)
 packages/
   shared/ storage/ i18n/ ui/ env/ ...   # workspace libraries

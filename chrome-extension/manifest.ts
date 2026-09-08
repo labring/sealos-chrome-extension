@@ -31,8 +31,7 @@ const manifest = {
   version: packageJson.version,
   description: '__MSG_extensionDescription__',
   host_permissions: ['https://github.com/*', 'https://*.sealos.io/*'],
-  permissions: ['storage', 'tabs'],
-  options_page: 'options/index.html',
+  permissions: ['tabs'],
   background: {
     service_worker: 'background.js',
     type: 'module',

@@ -1,6 +1,5 @@
 import { t } from '@extension/i18n';
-import { deploySettingsStorage } from '@extension/storage';
-import { buildSealosDeployUrl, DEFAULT_AUTO_DEPLOY, parseGithubRepoRoot } from '@src/deploy-link';
+import { buildSealosDeployUrl, parseGithubRepoRoot } from '@src/deploy-link';
 
 /**
  * Injects a "Deploy on Sealos" button into the GitHub repository header actions row
@@ -103,25 +102,6 @@ const currentRepoRoot = (): string | null => {
   return parseGithubRepoRoot(`${location.origin}${location.pathname}`);
 };
 
-/**
- * A live auto-deploy flag kept in sync with chrome.storage so clicks and re-injections
- * always build the URL with the user's current setting.
- */
-let autoDeploy = DEFAULT_AUTO_DEPLOY;
-deploySettingsStorage.get().then(state => {
-  autoDeploy = state.autoDeploy;
-});
-deploySettingsStorage.subscribe(() => {
-  const state = deploySettingsStorage.getSnapshot();
-  if (!state) return;
-  autoDeploy = state.autoDeploy;
-  const button = document.getElementById(BUTTON_ID);
-  const root = currentRepoRoot();
-  if (button instanceof HTMLAnchorElement && root) {
-    button.href = buildSealosDeployUrl(root, autoDeploy);
-  }
-});
-
 const createItem = (repoRootUrl: string): HTMLLIElement => {
   ensureButtonStyle();
   const item = document.createElement('li');
@@ -129,7 +109,7 @@ const createItem = (repoRootUrl: string): HTMLLIElement => {
 
   const button = document.createElement('a');
   button.id = BUTTON_ID;
-  button.href = buildSealosDeployUrl(repoRootUrl, autoDeploy);
+  button.href = buildSealosDeployUrl(repoRootUrl);
   button.target = '_blank';
   button.rel = 'noopener noreferrer';
   button.className = 'btn btn-sm';

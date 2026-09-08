@@ -23,18 +23,6 @@
     "description": "Button label to open the Sealos console",
     "message": "Sealos 열기"
   },
-  "autoDeploySetting": {
-    "description": "Options page toggle for GitHub deep link autoDeploy parameter",
-    "message": "자동 배포 (Sealos Brain 검토 단계 건너뛰기)"
-  },
-  "autoDeploySettingDescription": {
-    "description": "Explains the GitHub login-recovery gap",
-    "message": "끄면 Sealos에서 임포트 검토가 먼저 열립니다. Sealos에 로그인하지 않으면 자동 모드에서 로그인 후 파라미터가 유실될 수 있습니다."
-  },
-  "settingsHeading": {
-    "description": "Heading on the options page",
-    "message": "설정"
-  },
   "displayErrorInfo": {
     "message": "오류 발생"
   },
