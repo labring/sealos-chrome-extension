@@ -4,7 +4,7 @@ Add a **Deploy on Sealos** button to every GitHub repository page. One click ope
 
 ## Download & Install
 
-Grab the packaged extension: [`landing/sealos-deploy-chrome-extension.zip`](landing/sealos-deploy-chrome-extension.zip) (or build your own, see below).
+Download `sealos-deploy-chrome-extension-<tag>.zip` from the [latest GitHub Release](https://github.com/zjy365/sealos-chrome-extension/releases/latest) (or build your own, see below).
 
 1. Unzip it — you'll get a folder with `manifest.json` inside.
 2. Open `chrome://extensions/` and enable **Developer mode** (top right).
@@ -45,6 +45,19 @@ pnpm e2e            # WebdriverIO specs
 ```
 
 Built on [chrome-extension-boilerplate-react-vite](https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite) (React + Vite + TypeScript + Turbo monorepo).
+
+## Release
+
+Push a version tag on a commit that includes `.github/workflows/release.yml`:
+
+```bash
+git tag v0.1.1
+git push origin v0.1.1
+```
+
+GitHub Actions builds the production Chrome extension and publishes its ZIP to a GitHub Release with automatically generated release notes. Tags must use `vX.Y.Z` or `X.Y.Z`; each numeric component must be 0–65535, without leading zeros, and the version cannot be `0.0.0`.
+
+The workflow sets the packaged extension version from the tag without committing version changes back to the repository. It uses the built-in `GITHUB_TOKEN`; no additional secrets are needed. Rerunning the workflow replaces the ZIP on the existing release. Install the ZIP using the steps above.
 
 ## Project structure
 
