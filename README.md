@@ -28,7 +28,7 @@ The button is **not** injected on non-repository pages (`/tree/...`, `/pull/...`
 
 ### Deployment flow
 
-The repository button always requests automatic deployment. If signed out, users first see the Sealos login page. Brain then requests GitHub authorization when needed and continues creating the repository deployment task. There is no settings page or automatic-deployment toggle; installation does not open an extra page.
+The repository button always requests automatic deployment. If signed out, users first see the Sealos login page. Sealos then requests GitHub authorization when needed and continues creating the repository deployment task. There is no settings page or automatic-deployment toggle; installation does not open an extra page.
 
 The toolbar popup's **Open Sealos** button opens the console without starting a repository deployment.
 

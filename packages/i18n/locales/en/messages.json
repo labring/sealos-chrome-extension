@@ -17,7 +17,7 @@
   },
   "popupDescription": {
     "description": "Explains what the extension does",
-    "message": "Open any GitHub repository page and a \"Deploy on Sealos\" button appears in the header. Click it to deploy the repository on Sealos Brain."
+    "message": "Open any GitHub repository page and a \"Deploy on Sealos\" button appears in the header. Click it to deploy the repository on Sealos."
   },
   "openSealos": {
     "description": "Button label to open the Sealos console",
